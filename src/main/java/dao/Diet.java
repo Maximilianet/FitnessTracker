@@ -14,8 +14,6 @@ public class Diet  {
     private String nameOfDiet;
     private int timeOfDiet;
     private Set<Product> products = null;//new HashSet<Post>(0);
-    private Long dietId;
-    private Long productId;
 
 
     public Diet() {
@@ -38,7 +36,7 @@ public class Diet  {
         this.id = id;
     }
 
-    @Column(name = "Name_of_diet", length = 32, nullable = false)
+    @Column(name = "name_of_diet", length = 32, nullable = false)
     public String getNameOfDiet() {
         return nameOfDiet;
     }
@@ -48,12 +46,12 @@ public class Diet  {
     }
 
 
-  @Column(name = "Time_of_diet", nullable = false)
-    public int getTimeOfDiet(int time_of_diet) {
+  @Column(name = "time_of_diet", nullable = false)
+    public int getTimeOfDiet() {
         return timeOfDiet;
     }
 
-    public void setTimeOfDiet(int timeOfDiet) {
+    public void   setTimeOfDiet(int timeOfDiet) {
         this.timeOfDiet = timeOfDiet;
     }
 
@@ -80,13 +78,4 @@ public class Diet  {
                 .toString();
     }
 
-
-    public void getTimeOfDiet() {
-
-
-    }
-
-    public Long getDietId() {
-        return dietId;
-    }
 }

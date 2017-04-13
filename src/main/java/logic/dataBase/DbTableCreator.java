@@ -4,9 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-/**
- * Created by valeriakulikova on 30.03.17.
- */
+
 public class DbTableCreator {
     public static void main(String[] args) {
         Connection c = null;
@@ -16,7 +14,7 @@ public class DbTableCreator {
             Class.forName("org.postgresql.Driver");
             c = DriverManager
                     .getConnection("jdbc:postgresql://localhost:5432/postgres",
-                            "postgres", "3713059151");
+                            "postgres", "12345");
 
             stmt = c.createStatement();
 
@@ -41,6 +39,11 @@ public class DbTableCreator {
                     + " ) ";
             stmt.executeUpdate(sql);
 
+//            sql= "ALTER TABLE JAVA_TASK.PRODUCT"
+//                    + " ADD CONSTRAINT FK_DIET "
+//                    + " FOREIGN KEY (DIET_ID) REFERENCES JAVA_TASK.DIET (ID) MATCH FULL "
+//                    + " ";
+//            stmt.executeUpdate(sql);
 
             stmt.close();
             c.close();
